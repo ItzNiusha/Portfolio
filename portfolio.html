@@ -5,16 +5,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta property="og:site_name" content="Niusha Shahrivar">
+    <meta property="og:title" content="Niusha Shahrivar"> -->
     <link rel="stylesheet" href="portfolio.css">
-    <title>Portfolio</title>
+    <title>Niusha Shahrivar</title>
     <script src="https://cdn.jsdelivr.net/npm/three@0.140.0/build/three.min.js"></script>
 </head>
 
 <body>
-    <div id="webgl-background"></div>
-    <button id="themeToggle">Toggle Theme</button>
+    <div
+        style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; padding: 8px; border: 8px white; box-sizing: border-box; background-color: #000;">
 
-    <div class="container" style="position: relative; z-index: 2;">
+        <div id="webgl-background"></div>
+    </div>
+    <div class="container">
         <div class="section">
             <!-- Content for the first section goes here -->
         </div>
@@ -26,15 +30,15 @@
         </div>
     </div>
 
-    <div class="section1" style="position: relative; z-index: 2;">
-        <a href="about.html" target="_blank">
-            <button id="glitchButton" class="btn" data-hover-text="Home">
+    <div class="section1">
+        <a href="about.html">
+            <button class="btn" data-hover-text="Home">
                 <span class="btn__content">About.</span>
                 <span class="btn__glitch"></span>
                 <span class="btn__label">r23</span>
             </button>
         </a>
-        <button class="btn" data-hover-text="About Me">
+        <button class="btn" data-hover-text="Experience">
             <span class="btn__content">Experience.</span>
             <span class="btn__glitch"></span>
             <span class="btn__label">r23</span>
@@ -44,7 +48,7 @@
             <span class="btn__glitch"></span>
             <span class="btn__label">r23</span>
         </button>
-        <a href="contact.html" target="_blank">
+        <a href="contact.html">
             <button class="btn" data-hover-text="Contact">
                 <span class="btn__content">Contact.</span>
                 <span class="btn__glitch"></span>
@@ -52,21 +56,12 @@
             </button>
         </a>
     </div>
-    <div class="section2" style="position: relative; z-index: 2;">
+    <div class="section2">
         <div class="midSectionTitle">
-            <p1> &lt; to be &gt; . Software developer . Front-end developer . App developer .</p1>
-            <!-- </div>
-        <span>
-            <p> &lt; Hello &gt; I'm Niusha . A &lt; computer science &gt; student from Sweden . I'm passionate about
-                &lt; coding &gt; and
-                creating innovative tech solutions . D 7 6 0 2 2 . 3 2 9 From &lt; web development &gt; to &lt; machine
-                learning &gt; . N 1 3 7 9 . 1 0
-                I love tackling challenging projects. &lt; Beyond coding &gt; . Let's connect and explore the world of
-                &lt; tech &gt; together .
-            </p>
-        </span>
-    </div> -->
-            <script src="shaderSetup.js"></script> <!-- Separate JS file for cleaner HTML -->
+            <p1>&lt; to be &gt; . Software developer . Front-end developer . App developer .</p1>
+        </div>
+    </div>
+    <script src="shaderSetup.js"></script>
 </body>
 
 </html>
