@@ -1,0 +1,407 @@
+@import url("https://fonts.googleapis.com/css?family=Barlow|Tomorrow:400,700&display=swap");
+
+
+
+:root {
+    --yellow-color: #d6d9ce;
+    --red-color: #ff003c;
+    --black-color: #050a0e;
+    --blue-color: #00f0ff;
+    --white-color: #fafafa;
+    --font-inter: "__inter_20b187", "__inter_Fallback_20b187";
+}
+
+#webgl-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    /* Background z-index lower than content */
+}
+
+.container,
+.section1,
+.section2 {
+    position: relative;
+    z-index: 2;
+    /* Ensures content is interactive and above the background */
+}
+
+
+
+.btn {
+    width: 230px;
+    height: 60px;
+    border: 0;
+    outline: none;
+    background-color: var(--black-color);
+    cursor: pointer;
+    position: relative;
+    font-family: Tomorrow, sans-serif;
+    font-size: .85rem;
+    text-transform: uppercase;
+    color: var(--black-color);
+    clip-path: polygon(92% 0, 100% 25%, 100% 100%, 8% 100%, 0% 75%, 0 0);
+}
+
+.btn__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    background-color: var(--white-color);
+    clip-path: polygon(92% 0, 100% 25%, 100% 100%, 8% 100%, 0% 75%, 0 0);
+}
+
+.btn--secondary {
+    background-color: var(--white-color);
+}
+
+.btn--secondary .btn__content {
+    background-color: var(--red-color);
+    color: var(--white-color);
+}
+
+.btn__label {
+    font-size: .40rem;
+    position: absolute;
+    bottom: -1px;
+    right: 8%;
+    padding: 0 5px;
+    background-color: var(--yellow-color);
+    z-index: 3;
+    border-left: 1px solid var(--blue-color);
+}
+
+.btn--secondary .btn__label {
+    background-color: var(--white-color);
+    color: var(--black-color);
+}
+
+.btn__glitch {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--yellow-color);
+    filter: drop-shadow(-2px 3px #67e3f3) drop-shadow(-1px -3px #02d8f3) drop-shadow(2px 1px #02d8f3);
+}
+
+.btn--secondary .btn__glitch {
+    background-color: var(--red-color);
+}
+
+.btn:hover .btn__glitch,
+.btn:hover .btn__content::after,
+.btn:focus .btn__glitch,
+.btn:focus .btn__content::after {
+    display: block;
+    animation: glitch-animation 2s linear 0s infinite;
+}
+
+/* secret trick */
+@keyframes glitch-animation {
+    0% {
+        opacity: 1;
+        transform: translateZ(0);
+        clip-path: polygon(0 2%, 100% 2%, 100% 5%, 0 5%);
+    }
+
+    2% {
+        clip-path: polygon(0 78%, 100% 78%, 100% 100%, 0 100%);
+        transform: translate(-5px);
+    }
+
+    6% {
+        clip-path: polygon(0 78%, 100% 78%, 100% 100%, 0 100%);
+        transform: translate(5px);
+    }
+
+    8% {
+        clip-path: polygon(0 78%, 100% 78%, 100% 100%, 0 100%);
+        transform: translate(-5px);
+    }
+
+    9% {
+        clip-path: polygon(0 78%, 100% 78%, 100% 100%, 0 100%);
+        transform: translate(0);
+    }
+
+    10% {
+        clip-path: polygon(0 54%, 100% 54%, 100% 44%, 0 44%);
+        transform: translate3d(5px, 0, 0);
+    }
+
+    13% {
+        clip-path: polygon(0 54%, 100% 54%, 100% 44%, 0 44%);
+        transform: translateZ(0);
+    }
+
+    13.1% {
+        clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+        transform: translate3d(5px, 0, 0);
+    }
+
+    15% {
+        clip-path: polygon(0 60%, 100% 60%, 100% 40%, 0 40%);
+        transform: translate3d(5px, 0, 0);
+    }
+
+    20% {
+        clip-path: polygon(0 60%, 100% 60%, 100% 40%, 0 40%);
+        transform: translate3d(-5px, 0, 0);
+    }
+
+    20.1% {
+        clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+        transform: translate3d(5px, 0, 0);
+    }
+
+    25% {
+        clip-path: polygon(0 85%, 100% 85%, 100% 40%, 0 40%);
+        transform: translate3d(5px, 0, 0);
+    }
+
+    30% {
+        clip-path: polygon(0 85%, 100% 85%, 100% 40%, 0 40%);
+        transform: translate3d(-5px, 0, 0);
+    }
+
+    30.1% {
+        clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+    }
+
+    35% {
+        clip-path: polygon(0 63%, 100% 63%, 100% 80%, 0 80%);
+        transform: translate(-5px);
+    }
+
+    40% {
+        clip-path: polygon(0 63%, 100% 63%, 100% 80%, 0 80%);
+        transform: translate(5px);
+    }
+
+    45% {
+        clip-path: polygon(0 63%, 100% 63%, 100% 80%, 0 80%);
+        transform: translate(-5px);
+    }
+
+    50% {
+        clip-path: polygon(0 63%, 100% 63%, 100% 80%, 0 80%);
+        transform: translate(0);
+    }
+
+    55% {
+        clip-path: polygon(0 10%, 100% 10%, 100% 0, 0 0);
+        transform: translate3d(5px, 0, 0);
+    }
+
+    60% {
+        clip-path: polygon(0 10%, 100% 10%, 100% 0, 0 0);
+        transform: translateZ(0);
+        opacity: 1;
+    }
+
+    60.1% {
+        clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+        opacity: 1;
+    }
+
+    to {
+        clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+        opacity: 1;
+    }
+}
+
+img {
+    margin-top: 20px;
+    width: 300px;
+    height: auto;
+
+}
+
+.img2 {
+    width: 900px;
+    height: auto;
+}
+
+/* CSS for the main container */
+.container {
+    display: flex;
+}
+
+/* CSS for the three sections */
+.section {
+    flex: 1;
+    /* Each section takes up equal space */
+    padding: 20px;
+    /* Add some spacing */
+    /* border: 1px solid #ccc; */
+    /* Add borders for visibility */
+    text-align: center;
+    /* Center the content */
+}
+
+.section1 {
+    flex: 1;
+    /* Each section takes up equal space */
+    padding: 30px;
+    /* Add some spacing */
+    /* border: 1px solid #ccc; */
+    /* Add borders for visibility */
+    text-align: center;
+    /* Center the content */
+}
+
+body {
+    /* background-image: url('img.jpg'); */
+    background-size: cover;
+}
+
+h2 {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    outline: none;
+    color: var(--black-color);
+    cursor: pointer;
+    padding: 20px 25px;
+    position: relative;
+    font-family: Tomorrow, sans-serif;
+    font-size: 24px;
+    text-transform: uppercase;
+}
+
+p {
+
+    color: var(--black-color);
+    text-transform: uppercase;
+    font-family: var(--font-inter), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-feature-settings: "ss03", "cv02", "cv11";
+    font-weight: 250;
+    font-size: .82rem;
+    line-height: 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    text-align: center;
+    /* border: 1px solid red; */
+}
+
+.upperSection {
+    flex: 1;
+    /* Each section takes up equal space */
+    padding: 20px;
+    /* Add some spacing */
+    /* border: 1px solid #ccc; */
+    /* Add borders for visibility */
+    text-align: center;
+    padding-top: 200px;
+}
+
+.midSectionTitle {
+    padding-top: 30px;
+    /* border: 1px solid rebeccapurple; */
+    text-align: center;
+
+}
+
+p1 {
+    color: var(--white-color);
+    text-transform: uppercase;
+    font-family: var(--font-inter), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-feature-settings: "ss03", "cv02", "cv11";
+    font-weight: 250;
+    font-size: 24px;
+    line-height: 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    font-weight: 600;
+}
+
+#top-section {
+    /* Light gray background for the top section */
+    padding: 20px;
+    text-align: center;
+    /* border: 1px solid red; */
+}
+
+#mid-section {
+    padding: 40px;
+    text-align: center;
+    /* border: 1px solid blue; */
+    padding-top: 200px;
+
+}
+
+.intro__bg {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    /* Adjust the height as needed */
+    overflow: hidden;
+    /* Hide overflow to clip the pseudo-elements */
+    background-color: #f8f8f8;
+    /* Background color for the about box */
+    margin-top: 20px;
+}
+
+.intro__bg::before,
+.intro__bg::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(252, 238, 10, .1);
+    pointer-events: none;
+    border-color: black;
+
+    /* Ensure the pseudo-elements don't interfere with clicks */
+}
+
+.intro__bg::before {
+    top: 0;
+    left: 0;
+    border-bottom: none;
+    border-right: none;
+}
+
+.intro__bg::after {
+    bottom: 0;
+    right: 0;
+    border-top: none;
+    border-left: none;
+}
+
+.about-box {
+    z-index: 1;
+    /* Place the about box above pseudo-elements */
+    padding: 20px;
+    /* Add padding to create space between text and box edges */
+    text-align: center;
+
+}
+
+.contact-box {
+    z-index: 1;
+    /* Place the about box above pseudo-elements */
+    padding: 20px;
+    /* Add padding to create space between text and box edges */
+    text-align: center;
+}
+
+.about-text {
+    font-size: 16px;
+}
