@@ -18,6 +18,7 @@ body {
     width: 100%;
     height: 100%;
     overflow: hidden;
+    font-family: var(--font-inter), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     /* Prevents scrollbars */
 }
 
@@ -263,7 +264,6 @@ body {
 }
 
 
-
 h2 {
     margin-top: 30px;
     display: flex;
@@ -284,7 +284,6 @@ p {
 
     color: var(--white-color);
     text-transform: uppercase;
-    font-family: var(--font-inter), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-feature-settings: "ss03", "cv02", "cv11";
     font-weight: 250;
     font-size: .82rem;
@@ -316,7 +315,6 @@ p {
 p1 {
     color: var(--white-color);
     text-transform: uppercase;
-    font-family: var(--font-inter), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-feature-settings: "ss03", "cv02", "cv11";
     font-weight: 250;
     font-size: 24px;
@@ -427,7 +425,6 @@ header {
     /* Ensures each title is on a new line */
     text-transform: uppercase;
     /* Keeps the text uppercase */
-    font-family: var(--font-inter), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     color: white;
     margin: 0;
     padding: 0;
@@ -450,4 +447,90 @@ header {
     padding-left: 0px;
     padding-right: 77px;
     /* This must be adjusted only if the job title needs nudging */
+}
+
+/* Contact Section */
+#contact-section {
+    position: relative;
+    /* Ensures the section is positioned above the background */
+    z-index: 2;
+    /* Higher z-index than #webgl-background */
+    padding: 50px;
+}
+
+
+.contact {
+    z-index: 3;
+    /* Ensures the form and content are above other elements */
+    max-width: 800px;
+    margin: 0 auto;
+    padding-top: 140px;
+    text-align: center;
+}
+
+/* .contact h1 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: lighter;
+} */
+
+.contact-form {
+    background-color: #444;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.contact-form .form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.contact-form label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: #ddd;
+    text-transform: uppercase;
+
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #555;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    background-color: #666;
+}
+
+.contact-form button {
+    z-index: 10;
+    width: 230px;
+    height: 60px;
+    border: 0;
+    outline: none;
+    background-color: white;
+    cursor: pointer;
+    position: relative;
+    font-size: .85rem;
+    text-transform: uppercase;
+    color: var(--black-color);
+    clip-path: polygon(92% 0, 100% 25%, 100% 100%, 8% 100%, 0% 75%, 0 0);
+
+}
+
+.contact-form button:hover {
+    background-color: gray;
+    animation: glitch-animation 0.5s linear 0s infinite;
 }

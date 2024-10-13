@@ -5,11 +5,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Contact</title>
+    <link rel="stylesheet" href="css/portfolio.css">
+    <script src="js/portfolio.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.140.0/build/three.min.js"></script>
 </head>
 
 <body>
+    <div id="webgl-background"></div>
+    <div id="top-section">
+        <header>
+            <h1 class="name-title">Niusha Shahrivar</h1>
+            <p class="job-title">Software Developer</p>
+        </header>
+    </div>
 
+    <div id="contact-section">
+        <section class="contact">
+            <!-- <h1>Contact.</h1> -->
+            <form action="#" method="POST" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Your Name.</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name." required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email.</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email." required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Your Message.</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Your message..." required></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Send Message.</button>
+            </form>
+        </section>
+    </div>
+
+    <script src="js/shaderSetup.js"></script>
 </body>
 
 </html>
